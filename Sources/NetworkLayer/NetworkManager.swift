@@ -12,7 +12,7 @@ public class DefaultNetworkManager<T: TargetType>: NetworkManager {
 	
 	private let provider: MoyaProvider<T>
 	
-	init() {
+	public init() {
 		let commonPlugins: [PluginType] = [
 			CustomLogger(),
 		].compactMap { $0 }
