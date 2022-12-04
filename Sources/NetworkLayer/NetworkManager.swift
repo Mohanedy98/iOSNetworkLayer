@@ -4,11 +4,11 @@ import CombineMoya
 import Moya
 
 @available(iOS 13.0, *)
-public protocol NetworkManagerProtocol {
+public protocol NetworkManager {
 
 	func makeRequest<Response: Codable>(_ target: TargetType) -> AnyPublisher<Response, Error>
 }
-public class NetworkManager<T: TargetType>: NetworkManagerProtocol {
+public class DefaultNetworkManager<T: TargetType>: NetworkManager {
 	
 	private let provider: MoyaProvider<T>
 	
